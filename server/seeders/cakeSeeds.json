@@ -1,0 +1,17 @@
+[
+    {
+        "cakeName": "Chocolate Cake",
+        "cakePrice": 100,
+        "cakeDescription": "This is a chocolate cake"
+    },
+    {
+        "cakeName": "Vanilla Cake",
+        "cakePrice": 200,
+        "cakeDescription": "This is a vanilla cake"
+    },
+    {
+        "cakeName": "Strawberry Cake",
+        "cakePrice": 300,
+        "cakeDescription": "This is a strawberry cake"
+    }
+]
