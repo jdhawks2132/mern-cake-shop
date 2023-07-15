@@ -46,6 +46,10 @@ const resolvers = {
       
             return { token, user };
           },
+          logout: (parent, args, context) => {
+            context.res.clearCookie('token');
+            return { message: 'Logged out' };
+          },
     }
 };
 

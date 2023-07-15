@@ -35,3 +35,11 @@ export const ADD_CAKE = gql`
   }
 `;
 
+export const LOGOUT_USER = gql`
+  mutation {
+    logout {
+      message
+    }
+  }
+`;
+

@@ -1,54 +1,40 @@
-import './App.css'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from './utils/queries';
 
 import Home from './pages/home/Home';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
-
-// Construct our main GraphQL API endpoint
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-// Construct request middleware that will attach the JWT token to every request as an `authorization` header
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
-  // return the headers to the context so httpLink can read them
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
-const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+import Navbar from './components/nav/Navbar';
+import Goodbye from './pages/auth/Goodbye';
+import CakeDetail from './pages/details/CakeDetail';
 
 function App() {
 
+  const { loading, data: userData } = useQuery(QUERY_ME);
+  const user = userData?.me || {};
+
+  console.log(user);
+
+  const isEmpty = (obj) => {
+    return Object.keys(obj).length === 0;
+  }
+
 
   return (
-    <ApolloProvider client={client}>
-      <Router>
+    <Router>
+      <Navbar currentUser={user}/>
+      <div className='p-11'>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/login' element={ <Login /> } />
-          <Route path='/signup' element={ <Signup /> } />
+          <Route path="/" element={!isEmpty(user) ? <Home currentUser={user}/> : <Login />} />
+          <Route path='/cake/:id' element={ !isEmpty(user) ? <CakeDetail currentUser={user} /> : <Login /> } />
+          <Route path='/login' element={ isEmpty(user) ? <Login /> : <Home currentUser={user} /> } />
+          <Route path='/signup' element={  isEmpty(user) ? <Signup /> : <Home currentUser={user} />} />
+          <Route path='/goodbye' element={ <Goodbye /> } />
         </Routes>
-      </Router>
-    </ApolloProvider>
+      </div>
+    </Router>
   )
 }
 
