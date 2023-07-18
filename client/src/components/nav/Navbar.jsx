@@ -31,7 +31,7 @@ const Navbar = ({ currentUser }) => {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-pink-200 p-6 text-gray-800">
       <div className="flex items-center flex-shrink-0 mr-6 lg:mr-0 lg:mb-0 mb-4">
-        <span className="font-semibold text-2xl tracking-tight">Wustl Bakes</span>
+        <h1 className="font-semibold text-2xl tracking-tight">Wustl Bakes</h1>
       </div>
       <div className="block lg:hidden">
         <button onClick={toggleMenu} className="flex items-center px-3 py-2 border rounded text-gray-800 border-pink-500 hover:text-pink-500 hover:border-pink-500">

@@ -11,6 +11,7 @@ export const QUERY_USER = gql`
         cakeName
         cakePrice
         cakeDescription
+        cakeImage
       }
     }
   }
@@ -27,6 +28,7 @@ export const QUERY_ME = gql`
         cakeName
         cakePrice
         cakeDescription
+        cakeImage
       }
     }
   }
@@ -39,6 +41,7 @@ export const QUERY_CAKES = gql`
             cakeName
             cakePrice
             cakeDescription
+            cakeImage
         }
     }
 `;
@@ -50,6 +53,7 @@ export const QUERY_SINGLE_CAKE = gql`
             cakeName
             cakePrice
             cakeDescription
+            cakeImage
         }
     }
 `;

@@ -1,17 +1,38 @@
 [
     {
-        "cakeName": "Chocolate Cake",
-        "cakePrice": 100,
-        "cakeDescription": "This is a chocolate cake"
-    },
-    {
-        "cakeName": "Vanilla Cake",
+        "cakeName": "Wedding Cake",
         "cakePrice": 200,
-        "cakeDescription": "This is a vanilla cake"
+        "cakeDescription": "Our 'Enchanting Elegance' wedding cake can comfortably serve up to 50 guests, making it a delightful addition to your special day without straining your budget.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/wedding_cake.jpg?raw=true"
     },
     {
-        "cakeName": "Strawberry Cake",
-        "cakePrice": 300,
-        "cakeDescription": "This is a strawberry cake"
+        "cakeName": "Custom Cake",
+        "cakePrice": 75,
+        "cakeDescription": "For just $75, savor our 'Splendid Surprise' custom cake. Enjoy a delightful single-layer cake tailored to your choice of flavor and design, meticulously hand-decorated for a personal touch. Serves up to 20 guests with taste and style.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/custom_flavor.jpg?raw=true"
+    },
+    {
+        "cakeName": "Kid's Cake",
+        "cakePrice": 25,
+        "cakeDescription": "At just $25, our 'Fantasy Fun' cake brings joy to any child's celebration. Enjoy a delicious single-layer cake, available in fun flavors, decorated with vibrant frosting and playful edible toppers. Perfectly serves up to 10 little party-goers.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/decorative_kids.jpg?raw=true"
+    },
+    {
+        "cakeName": "Variety Package",
+        "cakePrice": 150,
+        "cakeDescription": "Our 'Tempting Treats' variety package is perfect for any occasion. Enjoy a selection of 5 of our most popular cakes, each serving up to 10 guests. Choose from our wide variety of flavors and designs to create a package that's perfect for you.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/variety.jpg?raw=true"
+    },
+    {
+        "cakeName": "Macrons",
+        "cakePrice": 15,
+        "cakeDescription": "Our 'Marvelous Macrons' are a delightful addition to any celebration. Enjoy a selection of 10 of our most popular flavors, each decorated with a unique design. Perfect for any occasion, or just to treat yourself.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/colorful_macrons.jpg?raw=true"
+    },
+    {
+        "cakeName": "Choux Pastry",
+        "cakePrice": 10,
+        "cakeDescription": "Our 'Choux Pastry' is a delightful treat for any occasion. Enjoy a selection of 10 of our most popular flavors, each decorated with a unique design. Perfect for any occasion, or just to treat yourself.",
+        "cakeImage": "https://github.com/jdhawks2132/cake_photos/blob/main/choux.jpg?raw=true"
     }
 ]

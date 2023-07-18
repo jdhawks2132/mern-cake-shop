@@ -15,6 +15,10 @@ const cakeSchema = new Schema({
         type: String,
         required: true,
     },
+    cakeImage: {
+        type: String,
+        required: true,
+    },
 });
 
 const Cake = model('Cake', cakeSchema);

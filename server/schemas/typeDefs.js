@@ -6,6 +6,7 @@ const typeDefs = gql`
     cakeName: String
     cakePrice: Int
     cakeDescription: String
+    cakeImage: String
    }
 
     type User {
