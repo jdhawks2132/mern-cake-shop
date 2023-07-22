@@ -1,9 +1,6 @@
 import CakeCard from './CakeCard'
 
 const CardContainer = ({cakes, page}) => {
-
-  console.log(cakes)
-
   const cakeCards = cakes.map(cake => {
     return (
       <CakeCard cake={cake} key={cake._id} page={page} />
@@ -11,10 +8,10 @@ const CardContainer = ({cakes, page}) => {
   })
 
   return (
-    // style as grid with tailwindcss
-    <div className='grid grid-cols-3 gap-4 m-11'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 m-11'>
       {cakeCards}
     </div>
   )
 }
+
 export default CardContainer
