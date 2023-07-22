@@ -8,6 +8,9 @@
     "watch": "nodemon",
     "seed": "node seeders/seed.js"
   },
+  "engine" : {
+    "node" : "18.13.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
