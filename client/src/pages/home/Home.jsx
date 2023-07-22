@@ -13,7 +13,7 @@ const Home = ({currentUser}) => {
   return (
     <div>
       {/* Create a div using tailwindcss as a welcome header for the home page - make it it cute and use pink and gray */}
-      <div className="text-4xl font-bold text-center text-pink-500">
+      <div className="text-4xl font-bold text-center text-pink-500 my-11">
         <h2>Welcome to Wustl Bakes!</h2>
         <p className="text-2xl font-bold text-center text-gray-500">The best place to find cakes in St. Louis</p>
         {/* welcome back, currentUser.username */}

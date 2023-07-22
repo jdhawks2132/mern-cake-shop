@@ -26,20 +26,34 @@ const typeDefs = gql`
     message: String
     }
 
+    input CakeInput {
+    cakeName: String
+    cakePrice: Int
+    cakeDescription: String
+    cakeImage: String
+  }
+
     type Query {
     users: [User]
     user(username: String!): User
     cakes: [Cake]
-    cake(cakeName: String!): Cake
+    cake(cakeID: ID!): Cake
     me: User
   }
+
+
 
     type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     logout: Logout
-    }
-
+    # add cake use cakeInput
+    addCake(cakeInput: CakeInput): Cake
+    # add cake to user
+    addCakeToUser(cakeId: ID!): User
+    # remove cake from user
+    removeCakeFromUser(cakeId: ID!): User
+  }
 `;
 
 module.exports = typeDefs;

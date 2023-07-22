@@ -43,3 +43,44 @@ export const LOGOUT_USER = gql`
   }
 `;
 
+// addCakeToUser: async (parent, { cakeId }, context) => {
+//   const user = await User.findOneAndUpdate(
+//     { _id: context.user._id },
+//     { $addToSet: { cakes: cakeId } },
+//     { new: true }
+//   ).populate('cakes');
+//   return user;
+// },
+
+export const ADD_CAKE_TO_USER = gql`
+  mutation addCakeToUser($cakeId: ID!) {
+    addCakeToUser(cakeId: $cakeId) {
+      _id
+      username
+      email
+      cakes {
+        _id
+        cakeName
+        cakePrice
+        cakeDescription
+      }
+    }
+  }
+`;
+
+export const REMOVE_CAKE_FROM_USER = gql`
+  mutation removeCakeFromUser($cakeId: ID!) {
+    removeCakeFromUser(cakeId: $cakeId) {
+      _id
+      username
+      email
+      cakes {
+        _id
+        cakeName
+        cakePrice
+        cakeDescription
+      }
+    }
+  }
+`;
+

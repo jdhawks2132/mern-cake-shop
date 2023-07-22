@@ -39,16 +39,14 @@ export const QUERY_CAKES = gql`
         cakes {
             _id
             cakeName
-            cakePrice
-            cakeDescription
             cakeImage
         }
     }
 `;
 
 export const QUERY_SINGLE_CAKE = gql`
-    query getSingleCake($cakeName: String!) {
-        cake(cakeName: $cakeName) {
+    query getSingleCake($cakeID: ID!) {
+        cake(cakeID: $cakeID) {
             _id
             cakeName
             cakePrice

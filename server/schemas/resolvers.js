@@ -13,9 +13,9 @@ const resolvers = {
           cakes: async () => {
             return Cake.find();
             },
-            cake: async (parent, { cakeName }) => {
-                return Cake.findOne({ cakeName });
-            },
+            cake: async (parent, { cakeID }) => {
+              return Cake.findById(cakeID);
+          },
           me: async (parent, args, context) => {
             if (context.user) {
               return User.findOne({ _id: context.user._id }).populate('cakes');
@@ -49,6 +49,25 @@ const resolvers = {
           logout: (parent, args, context) => {
             context.res.clearCookie('token');
             return { message: 'Logged out' };
+          },
+          addCake: async (parent, { cakeInput }) => {
+            return Cake.create(cakeInput);
+          },
+          addCakeToUser: async (parent, { cakeId }, context) => {
+            const user = await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $addToSet: { cakes: cakeId } },
+              { new: true }
+            ).populate('cakes');
+            return user;
+          },
+          removeCakeFromUser: async (parent, { cakeId }, context) => {
+            const user = await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $pull: { cakes: cakeId } },
+              { new: true }
+            ).populate('cakes');
+            return user;
           },
     }
 };

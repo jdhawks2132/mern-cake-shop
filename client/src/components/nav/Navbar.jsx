@@ -43,10 +43,16 @@ const Navbar = ({ currentUser }) => {
       </div>
       <div className={`w-full ${isOpen ? 'block' : 'hidden'} lg:block  lg:flex lg:items-center lg:w-auto lg:space-x-4`}>
         <div className="text-sm lg:flex-grow lg:flex">
+
+          { Object.keys(currentUser).length !== 0 && !isGoodbye  ? (
+            <>
           <a href="/" className='font-bold text-gray-800 hover:text-pink-600 lg:mx-4'>Home</a>
-          <a href="/" className='font-bold text-gray-800 hover:text-pink-600 lg:mx-4'>Home</a>
-          <a href="/" className='font-bold text-gray-800 hover:text-pink-600 lg:mx-4'>Home</a>
-          <a href="/" className='font-bold text-gray-800 hover:text-pink-600 lg:mx-4'>Home</a>
+          <a href="/cart" className='font-bold text-gray-800 hover:text-pink-600 lg:mx-4'>Cart</a>
+          </>
+          ) : (
+            null
+          )}
+
         </div>
         <div>
           {Object.keys(currentUser).length !== 0 && !isGoodbye ? (

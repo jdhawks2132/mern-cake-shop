@@ -12,7 +12,7 @@ const CardContainer = ({cakes}) => {
 
   return (
     // style as grid with tailwindcss
-    <div className='grid grid-cols-3 gap-4'>
+    <div className='grid grid-cols-3 gap-4 m-11'>
       {cakeCards}
     </div>
   )
