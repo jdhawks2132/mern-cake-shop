@@ -31,8 +31,8 @@ function App() {
           <Route path="/" element={!isEmpty(user) ? <Home currentUser={user}/> : <Login />} />
           <Route path='/cake/:cakeId' element={ !isEmpty(user) ? <CakeDetail currentUser={user} /> : <Login /> } />
           <Route path='/cart' element={ !isEmpty(user) ? <Cart currentUser={user} /> : <Login /> } />
-          <Route path='/login' element={ isEmpty(user) ? <Login /> : <Home currentUser={user} /> } />
-          <Route path='/signup' element={  isEmpty(user) ? <Signup /> : <Home currentUser={user} />} />
+          <Route path='/login' element={ <Login /> } />
+          <Route path='/signup' element={ <Signup /> } />
           <Route path='/goodbye' element={ <Goodbye /> } />
         </Routes>
       </div>
