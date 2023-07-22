@@ -32,6 +32,7 @@ This is a full stack MERN application that allows users to create, read, update,
 - Mongoose.js
 - GraphQL
 - Apollo Server
+- Vite
 - React.js
 - Tailwind CSS
 - Heroku

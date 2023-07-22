@@ -3,7 +3,7 @@ import cakeImg from '../../assets/cakeImage.jpg'; // replace with your image pat
 
 const Goodbye = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="py-11 min-h-screen flex items-start justify-center bg-gray-100">
       <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-md">
         <div>
           <img className="mx-auto w-11/12" src={cakeImg} alt="Cake" />

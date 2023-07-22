@@ -1,12 +1,12 @@
 import CakeCard from './CakeCard'
 
-const CardContainer = ({cakes}) => {
+const CardContainer = ({cakes, page}) => {
 
   console.log(cakes)
 
   const cakeCards = cakes.map(cake => {
     return (
-      <CakeCard cake={cake} key={cake._id} />
+      <CakeCard cake={cake} key={cake._id} page={page} />
     )
   })
 
